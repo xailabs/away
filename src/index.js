@@ -74,10 +74,10 @@ class Idle {
 
     _handleVisibility = () => {
         if (document.hidden) {
-            this.state.idle_fn.forEach(fn => fn());
+            this.state.idle_fn.forEach(fn => fn(true));
             disable(this);
         } else  {
-            this.state.active_fn.forEach(fn => fn());
+            this.state.active_fn.forEach(fn => fn(true));
             enable(this);
         }
     };
