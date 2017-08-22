@@ -1,6 +1,6 @@
 {
   "name": "@xailabs/away",
-  "version": "2.0.0-rc5",
+  "version": "2.0.0-rc6",
   "description": "detect when a user is idle on a page",
   "main": "lib/index.js",
   "scripts": {

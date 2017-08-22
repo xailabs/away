@@ -13,7 +13,7 @@ timer.on('idle', function(tab) {
     console.log('user is idle');
     if (tab) console.log('>> user switched to another tab');
 });
-timer.on('active', function() {
+timer.on('active', function(tab) {
     console.log('user is active');
     if (tab) console.log('>> user switched back from another tab');
 });
