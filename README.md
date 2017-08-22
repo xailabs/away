@@ -1,4 +1,6 @@
-# away [![Build Status](https://travis-ci.org/defunctzombie/away.png?branch=master)](https://travis-ci.org/defunctzombie/away)
+# @xailabs/away
+
+Fork of [away](https://www.npmjs.com/package/away)
 
 detect idle users on webpages
 
@@ -14,6 +16,12 @@ timer.on('active', function() {
     console.log('user is active');
 });
 ```
+
+# Fork:
+
+- ES6 rewrite, transpiled via babel
+- Use passive events when possible
+- Detect tab change: User leaves tab -> idle, user comes back -> active
 
 ## api
 
@@ -44,8 +52,14 @@ Milliseconds before user is considered idle. (default ```30000```)
 ### events
 String of DOM events that will trigger activity. (see index.js for default)
 
+### eventOptions
+Value for the third argument in `addEventListener`. (if passive events are supported, the default is ```{passive: true}```, otherwise it is ```false```)
+
 ### start
 Whether to start idle timer upon creation. (default ```true```)
+
+### tab
+Whether to detect tab changes (default ```true```)
 
 ## install
 
