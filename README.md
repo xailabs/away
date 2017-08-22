@@ -9,11 +9,13 @@ var away = require('away');
 
 // detect users who are idle for 10 seconds
 var timer = away(10000);
-timer.on('idle', function() {
+timer.on('idle', function(tab) {
     console.log('user is idle');
+    if (tab) console.log('>> user switched to another tab');
 });
 timer.on('active', function() {
     console.log('user is active');
+    if (tab) console.log('>> user switched back from another tab');
 });
 ```
 
