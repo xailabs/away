@@ -62,12 +62,12 @@ Whether to start idle timer upon creation. (default ```true```)
 
 ### tab
 Whether to detect tab changes (default ```true```)  
-When the user switches between tabs, all `idle` and `active` callbacks are invoked with a boolean `true`.
+When the user switches between tabs, all `idle` and `active` callbacks are invoked immediatly and receive a boolean `true` as argument.
 
 - When the user switches to another tab, all `idle` callbacks are invoked
 - When the user switches back from another tab, all `active` callbacks are invoked
 
-Use the boolean flag if you need to react to state changes due to tab switching (as opposed to user activity/idleness while the tab is active)
+Use the boolean argument if you need to distinguish between regular user idleness/activity vs switching back and forth between tabs.
 
 ## install
 
