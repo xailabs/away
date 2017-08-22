@@ -1,26 +1,38 @@
 {
-  "name": "away",
-  "version": "1.0.0",
+  "name": "@xailabs/away",
+  "version": "2.0.0-rc1",
   "description": "detect when a user is idle on a page",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "rimraf lib/* && babel src -d lib",
+    "test": "zuul test.js",
+    "test-local": "zuul --local 8080 test.js",
+    "prepublish": "npm run build"
+  },
   "dependencies": {
-    "xtend": "2.0.3"
+    "detect-passive-events": "^1.0.2"
   },
   "devDependencies": {
-    "synthetic-dom-events": "~0.0.0",
-    "zuul": "~1.0.4"
-  },
-  "scripts": {
-    "test": "zuul test.js",
-    "test-local": "zuul --local 8080 test.js"
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "babelify": "^7.3.0",
+    "rimraf": "^2.6.1",
+    "synthetic-dom-events": "^0.3.0",
+    "zuul": "^3.11.1"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/shtylman/away.git"
+    "url": "https://github.com/xailabs/away"
   },
   "keywords": [
     "idle"
   ],
   "author": "Roman Shtylman <shtylman@gmail.com>",
+  "contributors": [
+    "Jovica Aleksic <jovica.aleksic@xailabs.de>)"
+  ],
   "license": "MIT"
 }

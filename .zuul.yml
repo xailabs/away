@@ -1,4 +1,7 @@
 ui: mocha-qunit
+browserify:
+    - transform:
+        name: babelify
 browsers:
     - name: chrome
       version: 27..latest

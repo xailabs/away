@@ -1,10 +1,10 @@
-var assert = require('assert');
-var idle = require('./');
+import assert from 'assert';
+import synth from 'synthetic-dom-events';
 
-var synth = require('synthetic-dom-events');
+import idle from './src';
 
-var move = function(element) {
-    var ev = synth('mousemove');
+const move = function(element) {
+    const ev = synth('mousemove');
     if (element.dispatchEvent) {
         element.dispatchEvent(ev);
     }
@@ -14,13 +14,13 @@ var move = function(element) {
 };
 
 test('create', function() {
-    var timer = idle(1000);
+    const timer = idle(1000);
     timer.stop();
 });
 
 test('idle', function(done) {
-    var timer = idle(1000);
-    var elapsed = false;
+    const timer = idle(1000);
+    let elapsed = false;
 
     setTimeout(function() {
         elapsed = true;
@@ -36,7 +36,7 @@ test('idle', function(done) {
 });
 
 test('stop', function(done) {
-    var timer = idle(1000);
+    const timer = idle(1000);
 
     setTimeout(function() {
         timer.stop();
@@ -55,7 +55,7 @@ test('stop', function(done) {
 });
 
 test('active', function(done) {
-    var timer = idle(1000);
+    const timer = idle(1000);
     timer.on('idle', function() {
         move(document);
     });
